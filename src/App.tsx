@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import './App.css';
 import List from './Component/List';
 import Unordered from './Component/Unordered';
 
-const myName = 'JJ'
-const game = ['candy crush', 'daddy']
+const myName:string = 'JJ'
+const game:string[] = ['candy crush', 'daddy']
 
 function App() {
-  const [todo, setToDo] = useState([]);
-  const [text, setText] = useState('');
+  const [todo, setToDo] = useState<string[]>([]);
+  const [text, setText] = useState<string>('');
 
-  const toDoListHandler = (val) => {
-    if (val.target.value.length > 0) {
-      setText(val.target.value);
+  const toDoListHandler = (val:React.FormEvent<HTMLInputElement>) => {
+    if (val.currentTarget.value.length > 0) {
+      setText(val.currentTarget.value);
     }
   }
 
